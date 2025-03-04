@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4m2ke75ea4wu"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_u05qm"]
+[ext_resource type="Texture2D" uid="uid://c538u48lleatg" path="res://Tiles and sprites/Tiles/tile_0084.png" id="2_d78s6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nrp8k"]
+radius = 18.0278
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_u05qm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.8125, 3)
+texture = ExtResource("2_d78s6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nrp8k")

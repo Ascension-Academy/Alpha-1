@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5suxufjvsypn"]
+
+[ext_resource type="PackedScene" uid="uid://dixuv7fntjd0" path="res://tile_map_layer.tscn" id="1_g87uh"]
+[ext_resource type="PackedScene" uid="uid://b4m2ke75ea4wu" path="res://player.tscn" id="2_4cino"]
+
+[node name="Main" type="Node2D"]
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_g87uh")]
+
+[node name="Obstacles" parent="." instance=ExtResource("1_g87uh")]
+
+[node name="Player" parent="Obstacles" instance=ExtResource("2_4cino")]
