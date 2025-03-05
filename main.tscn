@@ -1,12 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5suxufjvsypn"]
+[gd_scene load_steps=5 format=4 uid="uid://b5suxufjvsypn"]
 
-[ext_resource type="PackedScene" uid="uid://dixuv7fntjd0" path="res://tile_map_layer.tscn" id="1_g87uh"]
-[ext_resource type="PackedScene" uid="uid://b4m2ke75ea4wu" path="res://player.tscn" id="2_4cino"]
+[ext_resource type="Texture2D" uid="uid://bsftg58ukboth" path="res://Adventure Art/Backgrounds/Tilesets/TilesetNature.png" id="1_abrho"]
+[ext_resource type="PackedScene" uid="uid://b4m2ke75ea4wu" path="res://player.tscn" id="2_rcgjv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hqmyb"]
+texture = ExtResource("1_abrho")
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -4, -4, -4, -4, -4)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -4, -4, -4, -4, -4)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -4, -4, -4, -4, -4)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -4, -4, -4, -4, -4)
+8:0/size_in_atlas = Vector2i(2, 2)
+8:0/0 = 0
+8:0/0/y_sort_origin = 10
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.25, -15.125, -13.75, -4.875, -13, 11.75, -0.875, 15.125, 12.75, 12.625, 13.375, -4.375)
+
+[sub_resource type="TileSet" id="TileSet_7hs84"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_hqmyb")
 
 [node name="Main" type="Node2D"]
 
-[node name="TileMapLayer" parent="." instance=ExtResource("1_g87uh")]
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+position = Vector2(400, 300)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAABAAAAAAABAAAAAAABAAEAAAABAAEAAAAGAAAAAAAAAAAAAAAGAAEAAAAAAAEAAAAHAAAAAAABAAAAAAAHAAEAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_7hs84")
 
-[node name="Obstacles" parent="." instance=ExtResource("1_g87uh")]
-
-[node name="Player" parent="Obstacles" instance=ExtResource("2_4cino")]
+[node name="Player" parent="TileMapLayer" instance=ExtResource("2_rcgjv")]
+position = Vector2(85, 68)

@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 
 
 const speed = 300.0
