@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://b5suxufjvsypn"]
+[gd_scene load_steps=6 format=4 uid="uid://b5suxufjvsypn"]
 
 [ext_resource type="Texture2D" uid="uid://bsftg58ukboth" path="res://Adventure Art/Backgrounds/Tilesets/TilesetNature.png" id="1_abrho"]
 [ext_resource type="PackedScene" uid="uid://b4m2ke75ea4wu" path="res://player.tscn" id="2_rcgjv"]
+[ext_resource type="PackedScene" uid="uid://cwu3x31u1rsal" path="res://enemy.tscn" id="3_2wrpc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hqmyb"]
 texture = ExtResource("1_abrho")
@@ -32,3 +33,9 @@ tile_set = SubResource("TileSet_7hs84")
 
 [node name="Player" parent="TileMapLayer" instance=ExtResource("2_rcgjv")]
 position = Vector2(85, 68)
+
+[node name="Enemy" parent="." instance=ExtResource("3_2wrpc")]
+position = Vector2(388, 365)
+velocity = null
+speed = null
+player_path = null
